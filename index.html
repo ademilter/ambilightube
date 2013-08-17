@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>AMBILIGHTUBE</title>
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,700&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="css/normalize.css"/>
+    <link rel="stylesheet" type="text/css" href="css/main.css"/>
+</head>
+<body>
+
+<header>
+    <h1>AMBILIGHTUBE</h1>
+    <hr>
+    <p>Paste a youtube video url and enjoy the show !</p>
+
+    <p>
+        <input class="url-text" disabled type="text" placeholder="coming soon"/>
+        <input class="url-button" disabled type="button" value="Watch!"/>
+    </p>
+</header>
+
+
+<div class="ambilight">
+    <div id="frontD">
+        <div id="videoDiv">Loading...</div>
+    </div>
+    <div class="slice"></div>
+    <div id="backD">
+        <div id="videoDiv2">Loading...</div>
+    </div>
+</div>
+
+
+<footer>
+    <p>Only for <a href="https://www.google.com/intl/en/chrome/browser/">Google Chrome</a></p>
+
+    <p>
+        <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://ademilter.com/lab/ambilightube" data-text="AMBILIGHTUBE
+Make youtube videos more enjoyable.
+" data-via="ademilter" data-related="ademilter">Tweet</a>
+        <a href="https://twitter.com/ademilter" class="twitter-follow-button" data-show-count="false">Follow @ademilter</a>
+    </p>
+
+    <small>inspired by <a href="http://goo.gl/h8O0fJ">philips ambilight tv series</a></small>
+</footer>
+
+
+<script src="js/jquery-2.0.3.min.js"></script>
+<script src="js/swfobject.js"></script>
+<script src="js/play.js"></script>
+<script>
+
+    !function (d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
+        if (!d.getElementById(id)) {
+            js = d.createElement(s);
+            js.id = id;
+            js.src = p + '://platform.twitter.com/widgets.js';
+            fjs.parentNode.insertBefore(js, fjs);
+        }
+    }(document, 'script', 'twitter-wjs');
+
+
+    var _gaq = [
+        ['_setAccount', 'UA-17768654-1'],
+        ['_trackPageview']
+    ];
+    (function (d, t) {
+        var g = d.createElement(t), s = d.getElementsByTagName(t)[0];
+        g.src = ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js';
+        s.parentNode.insertBefore(g, s)
+    }(document, 'script'));
+</script>
+</body>
+</html>
+

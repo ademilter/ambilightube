@@ -1,0 +1,118 @@
+body {
+    text-align: center;
+    font: 300 16px/1.2 "Source Sans Pro", Helvetica, Arial, sans-serif;
+    color: #ccc;
+    background: #555 url("../img/bg.jpeg") fixed;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, .5);
+}
+
+header {
+    margin-top: 60px;
+}
+
+h1 {
+    color: #fff;
+    font-size: 30px;
+    line-height: 1;
+    letter-spacing: 14px;
+    font-weight: 700;
+}
+
+hr {
+    border: 0;
+    margin: 20px 0;
+    border-top: 1px solid #777;
+    width: 80px;
+    display: inline-block;
+}
+
+p {
+    margin-top: 0;
+}
+
+a {
+    color: #ccc;
+}
+
+a:hover {
+    color: #fff;
+}
+
+.url-text,
+.url-button {
+    border: 0;
+    background-color: #fff;
+}
+
+.url-text {
+    width: 200px;
+    font-weight: inherit;
+    padding: 8px 10px;
+}
+
+.url-button {
+    padding: 8px 15px;
+}
+
+.url-button:active {
+    text-align: inherit;
+    background-color: #ccc;
+}
+
+.url-text:disabled,
+.url-button:disabled {
+    background-color: #eee;
+    cursor: not-allowed;
+}
+
+.ambilight {
+    position: relative;
+    height: 640px;
+
+}
+
+#frontD,
+#backD {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+
+}
+
+#frontD {
+    z-index: 3;
+    width: 640px;
+    height: 360px;
+    margin-left: -320px;
+    margin-top: -180px;
+    box-shadow: 0 0 0 3px #000, 0 9px 0 3px #000, 0 12px 0 3px #aaa, 0 32px 40px rgba(0, 0, 0, .5);
+    border-radius: 1px;
+}
+
+.slice {
+    z-index: 2;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    background-color: transparent;
+}
+
+#backD {
+    z-index: 1;
+    width: 800px;
+    height: 450px;
+    margin-left: -400px;
+    margin-top: -225px;
+    -webkit-filter: blur(60px);
+    filter: blur(60px);
+}
+
+footer small {
+    color: #888;
+}
+
+footer small a {
+    color: #888;
+}
