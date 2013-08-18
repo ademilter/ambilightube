@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+            border: 0;
+        }
+
+        body {
+            background: #555 url("bg.jpeg");
+        }
+
+        video {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+
+        div {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: 448px;
+            height: 252px;
+            margin-left: -224px;
+            margin-top: -126px;
+        }
+
+        #frontD {
+            z-index: 2;
+            box-shadow: 0 0 0 3px #000, 0 9px 0 3px #000, 0 12px 0 3px #aaa, 0 20px 30px rgba(0, 0, 0, .5);
+            border-radius: 1px;
+        }
+
+        #frontD video {
+        }
+
+        #backD {
+            z-index: 1;
+            width: 550px;
+            height: 315px;
+            margin-left: -275px;
+            margin-top: -157px;
+            -webkit-filter: blur(50px);
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div id="frontD">
+        <video id="frontV" controls="controls" src="Ice_Age_Dawn_of_the_Dinosaurs_130212_448x252.mp4"></video>
+    </div>
+    <div id="backD">
+        <video id="backV" src="Ice_Age_Dawn_of_the_Dinosaurs_130212_448x252.mp4"></video>
+    </div>
+</div>
+
+
+<script src="../js/jquery-2.0.3.min.js"></script>
+<script type="text/javascript">
+
+    $(function () {
+        addListeners($("#frontV"));
+    });
+
+    var back = $("#backV");
+
+    function addListeners(vid) {
+        vid.addEventListener('pause', function (e) {
+            back.pause();
+        }, false);
+        vid.addEventListener('play', function (e) {
+            back.play();
+            back.currentTime = e.target.currentTime.toFixed(3);
+        }, false);
+        vid.addEventListener('timeupdate', function (e) {
+            back.currentTime = e.target.currentTime.toFixed(3);
+        }, false);
+    }
+</script>
+
+</body>
+</html>
