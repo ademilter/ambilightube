@@ -11,7 +11,7 @@
         }
 
         body {
-            background: #555 url("bg.jpeg");
+            background: #555 url("../img/bg.jpeg");
         }
 
         video {
@@ -32,7 +32,7 @@
 
         #frontD {
             z-index: 2;
-            box-shadow: 0 0 0 3px #000, 0 9px 0 3px #000, 0 12px 0 3px #aaa, 0 20px 30px rgba(0, 0, 0, .5);
+            box-shadow: 0 0 0 2px #000, 0 7px 0 2px #000, 0 10px 0 2px #ccc, 0 20px 30px rgba(0, 0, 0, .5);
             border-radius: 1px;
         }
 
@@ -49,7 +49,7 @@
         }
     </style>
 </head>
-<body>
+<body onload="addListeners(document.getElementById('frontV'));">
 
 <div class="container">
     <div id="frontD">
@@ -60,18 +60,11 @@
     </div>
 </div>
 
-
-<script src="../js/jquery-2.0.3.min.js"></script>
 <script type="text/javascript">
-
-    $(function () {
-        addListeners($("#frontV"));
-    });
-
-    var back = $("#backV");
+    var back = document.getElementById('backV');
 
     function addListeners(vid) {
-        vid.addEventListener('pause', function (e) {
+        vid.addEventListener('pause', function () {
             back.pause();
         }, false);
         vid.addEventListener('play', function (e) {
