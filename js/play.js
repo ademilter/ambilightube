@@ -6,6 +6,7 @@
  * To change this template use File | Settings | File Templates.
  */
 
+var vStatu = true;
 
 $(function () {
     var vW = 640, vH = 360, vW2 = 800, vH2 = 450,
@@ -20,6 +21,18 @@ $(function () {
     swfobject.embedSWF("http://www.youtube.com/v/" + videoID +
         "?showinfo=0&version=3&enablejsapi=1&playerapiid=player2",
         "videoDiv2", vW2, vH2, "9", null, null, params, atts2);
+
+
+    $(".url-button").on("click", function () {
+        var url = $(".url-text").val();
+
+        ytplayer.loadVideoById(url);
+        ytplayer2.loadVideoById(url);
+        vStatu = false;
+        ytplayer2.playVideo();
+
+    });
+
 });
 
 
@@ -35,8 +48,6 @@ function onYouTubePlayerReady(playerId) {
         ytplayer2.addEventListener("onStateChange", "onPlayerStateChange2");
     }
 }
-
-var vStatu = true;
 
 function onPlayerStateChange(newState) {
     switch (newState) {
