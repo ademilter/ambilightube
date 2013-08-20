@@ -24,7 +24,7 @@ $(function () {
 
 
     $(".url-button").on("click", function () {
-        var url = $(".url-text").val();
+        var url = youtube_parser($(".url-text").val());
 
         ytplayer.loadVideoById(url);
         ytplayer2.loadVideoById(url);
@@ -32,8 +32,17 @@ $(function () {
         ytplayer2.playVideo();
 
     });
-
 });
+
+function youtube_parser(url) {
+    var regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#\&\?]*).*/;
+    var match = url.match(regExp);
+    if (match && match[7].length == 11) {
+        return match[7];
+    } else {
+        alert("Url incorrecta");
+    }
+}
 
 
 function onYouTubePlayerReady(playerId) {
